@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv')
+dotenv.config();
 
 const placesRoutes = require('./routes/places-routes');
 const usersRoutes = require('./routes/users-routes');
