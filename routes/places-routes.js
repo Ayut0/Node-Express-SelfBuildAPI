@@ -24,7 +24,7 @@ router.post(
     placeControllers.createPlace);
 
 router.patch(
-    '/:pid', 
+    '/:pid',
     [
         check('title').not().isEmpty()
     ],
