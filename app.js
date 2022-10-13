@@ -11,6 +11,7 @@ const placesRoutes = require('./routes/places-routes');
 const usersRoutes = require('./routes/users-routes');
 const HttpError = require('./models/http-error');
 const app = express();
+const PORT = 5000;
 const mongooseUrl = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.3juubee.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
 
 app.use(bodyParser.json());
@@ -53,6 +54,6 @@ mongoose
         console.log('Mongo is connected')
     })
     .then(() =>{
-        app.listen(process.env.PORT || 5000);
+        app.listen(process.env.PORT || PORT, () => console.log('Server is running'));
     })
     .catch(err => console.log('error message', err.message));
