@@ -54,6 +54,6 @@ mongoose
         console.log('Mongo is connected')
     })
     .then(() =>{
-        app.listen(PORT, () => console.log('Server is running'));
+        app.listen(process.env.PORT || PORT, () => console.log('Server is running'));
     })
     .catch(err => console.log('error message', err.message));
